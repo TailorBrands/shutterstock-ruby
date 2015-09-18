@@ -12,7 +12,7 @@ gem "shutterstock-ruby", "~> 0.0.1"
 
 ## Missing
 
-Current version only wraps the Image search, purchase and download API's. Feel free to send a pull request with more API's wrapped!
+Current version only wraps the Image and Video search, purchase and download API's. Feel free to send a pull request with more API's wrapped!
 
 ## Usage
 
@@ -35,7 +35,14 @@ end
 ```rb
 result = ShutterstockRuby::Images.search('Cat') # Returns a hash of the parsed JSON result.
 ```
-Source [source](https://developers.shutterstock.com/api/v2/image/search)
+Source [source](https://developers.shutterstock.com/api/v2/images/search)
+
+### Search for videos
+
+```rb
+result = ShutterstockRuby::Videos.search('Cat') # Returns a hash of the parsed JSON result.
+```
+Source [source](https://developers.shutterstock.com/api/v2/videos/search)
 
 ## Disclaimer
 

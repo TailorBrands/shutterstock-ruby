@@ -1,11 +1,9 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path('../lib', __FILE__)
 
-require 'semver'
-
 Gem::Specification.new do |s|
   s.name        = 'shutterstock-ruby'
-  s.version     = SemVer.find.format '%M.%m.%p'
+  s.version     = '0.1.0'
   s.platform    = Gem::Platform::RUBY
   s.date        = Date.today.to_s
   s.summary     = "An API wrapper for the Shutterstock API's"
@@ -25,5 +23,4 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rake', '~> 0'
   s.add_development_dependency 'rspec', '~> 3.2', '>= 3.2.0'
   s.add_development_dependency 'faker', '~> 0'
-  s.add_development_dependency 'semver', '~> 0'
 end
