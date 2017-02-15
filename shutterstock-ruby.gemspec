@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   ]
   s.test_files   = Dir['spec/**/*']
 
-  s.add_runtime_dependency 'rest-client', '~> 1'
+  s.add_runtime_dependency 'rest-client', '~> 2'
 
   s.add_development_dependency 'rake', '~> 0'
   s.add_development_dependency 'rspec', '~> 3.2', '>= 3.2.0'
