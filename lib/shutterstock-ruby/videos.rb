@@ -7,6 +7,10 @@ module ShutterstockRuby
       JSON.parse(self.get('/videos/search', { query: query }.merge(options)))
     end
 
+    def self.details(id, options = {})
+      JSON.parse(self.get('/videos', { id: id }.merge(options)))
+    end
+
     def self.purchase(id, subscription_id, size, options = {})
       params = { subscription_id: subscription_id, size: size }
       body = { videos: [ video_id: id ] }.to_json
