@@ -19,10 +19,12 @@ module ShutterstockRuby
 
   # Main configuration class.
   class Configuration
+    attr_accessor :access_token
     attr_accessor :api_client
     attr_accessor :api_secret
 
     def initialize
+      @access_token = nil
       @api_client = nil
       @api_secret = nil
     end
