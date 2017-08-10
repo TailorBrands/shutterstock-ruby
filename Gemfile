@@ -8,4 +8,3 @@ gem 'rspec', group: :test
 gem 'pry', group: :development
 
 gem 'rspec_junit_formatter', github: 'circleci/rspec_junit_formatter', group: :test
-gem 'codeclimate-test-reporter', group: :test, require: nil

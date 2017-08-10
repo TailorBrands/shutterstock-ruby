@@ -4,7 +4,7 @@ The Shutterstock Ruby API Wrapper
 A Ruby API wrapper for [Shutterstock](http://www.shutterstock.com/) [API's](http://developers.shutterstock.com)
 
 [![Gem Version](https://badge.fury.io/rb/shutterstock-ruby.svg)](http://badge.fury.io/rb/shutterstock-ruby)[![Dependency Status](https://gemnasium.com/TailorBrands/shutterstock-ruby.svg)](https://gemnasium.com/TailorBrands/shutterstock-ruby)
-[![Circle CI](https://circleci.com/gh/TailorBrands/shutterstock-ruby/tree/master.svg?style=svg)](https://circleci.com/gh/TailorBrands/shutterstock-ruby/tree/master)  [![Code Climate](https://codeclimate.com/github/TailorBrands/shutterstock-ruby/badges/gpa.svg)](https://codeclimate.com/github/TailorBrands/shutterstock-ruby)  [![Test Coverage](https://codeclimate.com/github/TailorBrands/shutterstock-ruby/badges/coverage.svg)](https://codeclimate.com/github/TailorBrands/shutterstock-ruby)
+[![Circle CI](https://circleci.com/gh/TailorBrands/shutterstock-ruby/tree/master.svg?style=svg)](https://circleci.com/gh/TailorBrands/shutterstock-ruby/tree/master)  [![Code Climate](https://codeclimate.com/github/TailorBrands/shutterstock-ruby/badges/gpa.svg)](https://codeclimate.com/github/TailorBrands/shutterstock-ruby) 
 
 ```rb
 gem "shutterstock-ruby"
