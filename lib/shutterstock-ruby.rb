@@ -1,5 +1,6 @@
 require 'json'
 require 'rest_client'
+require 'shutterstock-ruby/configuration'
 require 'shutterstock-ruby/connections'
 require 'shutterstock-ruby/images'
 require 'shutterstock-ruby/videos'
@@ -9,24 +10,22 @@ module ShutterstockRuby
   API_BASE = 'api.shutterstock.com/v2'
 
   def self.configuration
-    @configuration ||=  Configuration.new
+    @configuration ||=  Configuration.new({})
   end
 
   def self.configure
-    self.configuration ||= Configuration.new
+    self.configuration ||= Configuration.new({})
     yield(configuration) if block_given?
   end
 
-  # Main configuration class.
-  class Configuration
-    attr_accessor :access_token
-    attr_accessor :api_client
-    attr_accessor :api_secret
+  class Client
+    attr_reader :configuration, :videos, :images
 
-    def initialize
-      @access_token = nil
-      @api_client = nil
-      @api_secret = nil
+    def initialize(args = {})
+      @configuration = Configuration.new(args)
+      @videos = Videos.new(configuration)
+      @images = Images.new(configuration)
     end
+
   end
 end

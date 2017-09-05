@@ -1,5 +1,11 @@
 module ShutterstockRuby
-  module Connections
+  class Connections
+    attr_reader :configuration
+
+    def initialize(configuration)
+      @configuration = configuration
+    end
+
     def get(path, params = nil, options = {})
       ensure_credentials!
 
@@ -18,24 +24,28 @@ module ShutterstockRuby
       RestClient.post(build_url(path), body, add_bearer(options))
     end
 
+    protected
+    def self.client
+      @client ||= new(ShutterstockRuby.configuration)
+    end
+
     private
 
     def build_url(path)
-      if ShutterstockRuby.configuration.access_token
+      if configuration.access_token
         "https://#{ShutterstockRuby::API_BASE}#{path}"
       else
-        "https://#{ShutterstockRuby.configuration.api_client}:#{ShutterstockRuby.configuration.api_secret}@#{ShutterstockRuby::API_BASE}#{path}"
+        "https://#{configuration.api_client}:#{configuration.api_secret}@#{ShutterstockRuby::API_BASE}#{path}"
       end
     end
 
     def add_bearer(options)
-      options[:authorization] = "Bearer #{ShutterstockRuby.configuration.access_token}" if ShutterstockRuby.configuration.access_token
+      options[:authorization] = "Bearer #{configuration.access_token}" if configuration.access_token
       options
     end
 
     def ensure_credentials!
-      config = ShutterstockRuby.configuration
-      fail(Exception, 'Missing credentials') if (config.api_client.nil? || config.api_secret.nil?) && config.access_token.nil?
+      fail(Exception, 'Missing credentials') if (configuration.api_client.nil? || configuration.api_secret.nil?) && configuration.access_token.nil?
     end
   end
 end
