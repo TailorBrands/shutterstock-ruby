@@ -4,7 +4,7 @@ require 'date'
 
 Gem::Specification.new do |s|
   s.name        = 'shutterstock-ruby'
-  s.version     = '0.4.0'
+  s.version     = '0.4.1'
   s.platform    = Gem::Platform::RUBY
   s.date        = Date.today.to_s
   s.summary     = "An API wrapper for the Shutterstock API's"
