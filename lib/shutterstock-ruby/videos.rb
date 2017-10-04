@@ -23,6 +23,10 @@ module ShutterstockRuby
       JSON.parse(get("/videos/licenses", params.merge(options)))
     end
 
+    def download(licence)
+      JSON.parse(post("/videos/licenses/#{licence}/downloads", {}.to_json))
+    end
+
     class << self
       def search(query, options = {})
         client.search(query, options)
