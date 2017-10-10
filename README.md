@@ -30,6 +30,13 @@ ShutterstockRuby.configure do |config|
 end
 ```
 
+If you require multiple clients, you can create an instance:
+```rb
+@client ||= ShutterstockRuby::Client.new(access_token: access_token)
+```
+
+You must supply either an `api_client` and an `api_secret`, or an `access_token`.
+
 ### Search for images
 
 ```rb
@@ -39,10 +46,46 @@ Source [source](https://developers.shutterstock.com/api/v2/images/search)
 
 ### Search for videos
 
+Using the singleton client:
 ```rb
 result = ShutterstockRuby::Videos.search('Cat') # Returns a hash of the parsed JSON result.
 ```
+
+Using an instance of the client:
+```rb
+result = @client.videos.search('Cat') # Returns a hash of the parsed JSON result.
+```
+
 Source [source](https://developers.shutterstock.com/api/v2/videos/search)
+
+### Details for a video
+
+```rb
+result = @client.videos.details(video_id) # Returns a hash of the parsed JSON result.
+```
+Source [source](https://developers.shutterstock.com/api/v2/videos/get)
+
+### Purchase a video
+
+```rb
+result = @client.videos.purchase(video_id, subscription_id, size) # Returns a hash of the parsed JSON result.
+```
+Source [source](https://developers.shutterstock.com/api/v2/videos/license)
+
+### Retrieve an existing license for a video
+
+```rb
+result = @client.videos.licenses(video_id, license_name) # Returns a hash of the parsed JSON result.
+```
+Source [source](https://developers.shutterstock.com/api/v2/videos/licenses)
+
+### Download a video that has already been purchased
+
+```rb
+result = @client.videos.download(license_id) # Returns a hash of the parsed JSON result.
+```
+Source [source](https://developers.shutterstock.com/api/v2/videos/download)
+
 
 ## Disclaimer
 
