@@ -1,14 +1,23 @@
+# frozen_string_literal: true
+
 module ShutterstockRuby
   # A class to hold all images related code.
-  class Images < Connections
+  class Images < Asset
+    def klass_name
+      'image'
+    end
 
-    def search(query, options = {})
-      JSON.parse(get('/images/search', { query: query }.merge(options)))
+    def plural_klass_name
+      'images'
     end
 
     class << self
-      def search(query, options = {})
-        client.search(query, options)
+      def klass_name
+        'image'
+      end
+
+      def plural_klass_name
+        'images'
       end
     end
   end

@@ -2,6 +2,7 @@ require 'json'
 require 'rest_client'
 require 'shutterstock-ruby/configuration'
 require 'shutterstock-ruby/connections'
+require 'shutterstock-ruby/asset'
 require 'shutterstock-ruby/images'
 require 'shutterstock-ruby/videos'
 
